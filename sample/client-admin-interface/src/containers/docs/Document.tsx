@@ -4,7 +4,6 @@ import { theme } from '@/themes/mui'
 import { Box, Chip, Grid, Tooltip, Typography } from '@mui/material'
 import { GiMoneyStack } from 'react-icons/gi'
 import { useParams } from 'react-router-dom'
-import { prettyPrintJson, FormatOptions } from 'pretty-print-json'
 import { useState } from 'react'
 import { FaCopy } from 'react-icons/fa'
 import { IoMdCheckmark } from 'react-icons/io'
@@ -16,7 +15,6 @@ const Document = () => {
   const { data: serviceData, isLoading } = serviceDetailQuery
 
   const [copied, setCopied] = useState(false)
-  const options: FormatOptions = { linkUrls: true }
 
   if (!isLoading) {
     const resourceDoc = serviceData.result.resourceDoc
@@ -141,7 +139,7 @@ const Document = () => {
                     { id: 'defaultValue', label: 'مقدار پیش فرض' },
                     { id: 'regex', label: 'فرمت' },
                   ]}
-                  rows={resourceDoc.requestBody.map((request: any, index: number) => ({
+                  rows={resourceDoc.requestBody.map((request, index: number) => ({
                     id: index + 1,
                     name: request.name,
                     label: request.label,
@@ -169,7 +167,7 @@ const Document = () => {
                     { id: 'description', label: 'توضیحات' },
                     { id: 'regex', label: 'فرمت' },
                   ]}
-                  rows={resourceDoc.responseBody.map((request: any, index: number) => ({
+                  rows={resourceDoc.responseBody.map((request, index: number) => ({
                     id: index + 1,
                     name: request.name,
                     label: request.label,

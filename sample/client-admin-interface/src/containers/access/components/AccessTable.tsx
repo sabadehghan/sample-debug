@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import { LuArrowDownUp } from 'react-icons/lu'
 import { FiLayers } from 'react-icons/fi'
 import { PiMagicWand } from 'react-icons/pi'
 import { IoLogInOutline } from 'react-icons/io5'
 import { AccessType } from '@/services/accessServices'
 import GeneralTable from '@/components/GeneralTable'
-import EditAccessDialog from './EditAccessDialog'
 
 interface AccessTableProps {
   data: AccessType[]

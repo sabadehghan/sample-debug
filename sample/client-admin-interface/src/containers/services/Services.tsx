@@ -1,7 +1,7 @@
-import GeneralFilter from '@/components/GeneralFilter'
 import { Box, Grid } from '@mui/material'
 import ServicesTable from './components/ServicesTable'
 import useServices from '@/hooks/useServices'
+import GeneralFilter from '@/components/GeneralFilter'
 
 const Services = () => {
   const { serviceQuery } = useServices()

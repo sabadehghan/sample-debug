@@ -65,7 +65,7 @@ const CustomDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== '
   }),
 }))
 
-const DrawerHeader = styled('div')<DrawerHeaderProps>(({ theme, open }) => ({
+const DrawerHeader = styled('div')<DrawerHeaderProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

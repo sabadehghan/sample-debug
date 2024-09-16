@@ -21,7 +21,7 @@ type ColumnsType = {
   label?: string
   icon?: JSX.Element
   content?: () => JSX.Element
-  width?: string
+  width?: string | number
   isCopyable?: boolean
 }
 
@@ -51,7 +51,7 @@ const generateTableColumns = (columns: ColumnsType[]) => {
   return columns.map(({ id, label, isCopyable }) => ({
     id,
     label,
-    render: (value: any) => {
+    render: (value) => {
       const maxLength = 18
       const displayValue = value && value.length > maxLength ? `${value.slice(0, maxLength)}...` : value || '-'
       return (
@@ -70,12 +70,12 @@ const generateTableColumns = (columns: ColumnsType[]) => {
   }))
 }
 
-const RowDetailPanel: React.FC<{ row: any }> = ({ row }) => (
+const RowDetailPanel: React.FC<{ row }> = ({ row }) => (
   <Box sx={{ padding: '10px', width: '900px', margin: 'auto' }}>
     {row.subElements && row.subElements.length > 0 ? (
       <Table size="small">
         <TableBody>
-          {row.subElements.map((subElement: any) => (
+          {row.subElements.map((subElement) => (
             <TableRow key={subElement.id}>
               <TableCell style={{ textAlign: 'center' }}>{subElement.name || '-'}</TableCell>
               <TableCell style={{ textAlign: 'center' }}>{subElement.label || '-'}</TableCell>
