@@ -15,8 +15,8 @@ export type CompanyType = {
 
 export type CompanyMutationType = {
   name: string
-  username: string
-  password: string
+  username?: string
+  password?: string
   callbackUrl: string
   ip: string
   scopes: { id: string }[]
