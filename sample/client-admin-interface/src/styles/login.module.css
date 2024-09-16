@@ -1,0 +1,6 @@
+.background {
+  background-image: url('@/assets/svg/bg-login.svg');
+  background-color: var(--background-color);
+  background-size: cover;
+  background-position: left;
+}
