@@ -1,6 +1,7 @@
 import { AccessType } from './accessServices'
 import { http } from './httpService'
 
+
 export type CompanyType = {
   id?: string
   name: string
